@@ -2,7 +2,7 @@ import { Client, Connection } from '@temporalio/client';
 import { nanoid } from 'nanoid';
 
 import { TASK_QUEUE_NAME } from './shared';
-import { helloWorldWorkflow } from './workflows';
+import { successWorkflow } from './workflows';
 
 async function run() {
   const connection = await Connection.connect({
@@ -16,11 +16,11 @@ async function run() {
     namespace: process.env.TEMPORAL_NAMESPACE,
   });
 
-  const handle = await client.workflow.start(helloWorldWorkflow, {
+  const handle = await client.workflow.start(successWorkflow, {
     taskQueue: TASK_QUEUE_NAME,
-    args: ['Hacker'],
+    args: [false],
     // in practice, use a meaningful business ID, like customerId or transactionId
-    workflowId: 'hello-world-' + nanoid(),
+    workflowId: 'doom-' + nanoid(),
   });
   console.log(`Started workflow ${handle.workflowId}`);
 

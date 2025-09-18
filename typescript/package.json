@@ -28,6 +28,7 @@
     "@temporalio/client": "^1.13.0",
     "@temporalio/worker": "^1.13.0",
     "@temporalio/workflow": "^1.13.0",
+    "glob": "^11.0.3",
     "nanoid": "^5.1.5"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@temporalio/testing": "^1.13.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@tsconfig/node22": "^22.0.0",
+    "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.3.0",
     "eslint-config-prettier": "^10.1.8",
